@@ -63,5 +63,10 @@ namespace WindowsFormsApp231101_231471
             }
         }
 
+        private void FrmMenu_Load(object sender, EventArgs e)
+        {
+            Banco.CriarBanco();
+        }
+
     }
 }
