@@ -21,5 +21,11 @@ namespace WindowsFormsApp231101_231471
             FrmCidades form = new FrmCidades();
             form.Show();
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmMarca form = new FrmMarca();
+            form.Show();
+        }
     }
 }

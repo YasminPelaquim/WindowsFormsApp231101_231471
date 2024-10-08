@@ -26,19 +26,13 @@ namespace WindowsFormsApp231101_231471.Views
             {
                 nome = pesquisa
             };
-
             dgvCidades.DataSource = c.Consultar();
-        }
-
-        private void FrmCidades_Load(object sender, EventArgs e)
-        {
-            LimpaControles();
-            carregarGrid("");
-        }
+        }        
 
         private void btnIncluir_Click(object sender, EventArgs e)
         {
-            if (txtNome.Text == string.Empty) return;
+            if (txtNome.Text == String.Empty) return;
+            
             c = new Cidade()
             {
                 nome = txtNome.Text,
@@ -49,25 +43,47 @@ namespace WindowsFormsApp231101_231471.Views
 
             LimpaControles();
             carregarGrid("");
-        }
+        }   
 
-        private void dgvCidades_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void btnAlterar_Click(object sender, EventArgs e)
         {
-            if (txtID.Text == string.Empty) return;
+            if (txtID.Text == String.Empty) return;
 
             c = new Cidade()
             {
                 id = int.Parse(txtID.Text),
                 nome = txtNome.Text,
-                uf = txtUF.Text,
+                uf = txtUF.Text
             };
-
             c.Alterar();
+
             LimpaControles();
             carregarGrid("");
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void FrmCidades_Load_1(object sender, EventArgs e)
+        {
+            LimpaControles();
+            carregarGrid("");
+        }
+
+        private void dgvCidades_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvCidades.RowCount > 0)
+            {
+                txtID.Text = dgvCidades.CurrentRow.Cells[0].Value.ToString();
+                txtNome.Text = dgvCidades.CurrentRow.Cells[1].Value.ToString();
+                txtUF.Text = dgvCidades.CurrentRow.Cells[2].Value.ToString();
+            }
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+            LimpaControles();
+            carregarGrid("");
+        }
+
+        private void btnExcluir_Click_1(object sender, EventArgs e)
         {
             if (txtID.Text == "") return;
 
@@ -84,20 +100,14 @@ namespace WindowsFormsApp231101_231471.Views
             }
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            LimpaControles();
-            carregarGrid("");
-        }
-
-        private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            carregarGrid(txtPesquisa.Text);
-        }
-
-        private void btnFechar_Click(object sender, EventArgs e)
+        private void btnFechar_Click_1(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            carregarGrid(txtPesquisa.Text);
         }
     }
 }
