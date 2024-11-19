@@ -109,5 +109,7 @@ namespace WindowsFormsApp231101_231471.Views
         {
             carregarGrid(txtPesquisa.Text);
         }
+
+       
     }
 }

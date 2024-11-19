@@ -153,6 +153,7 @@
             this.dgvCidades.Size = new System.Drawing.Size(665, 162);
             this.dgvCidades.TabIndex = 3;
             this.dgvCidades.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCidades_CellClick_1);
+          
             // 
             // btnPesquisar
             // 

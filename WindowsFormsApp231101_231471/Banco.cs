@@ -61,7 +61,9 @@ namespace WindowsFormsApp231101_231471
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias" + "(id integer auto_increment primary key, " + "categoria char(20))", Conexao);
                 Comando.ExecuteNonQuery();
 
-                
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Clientes" + "(id integer auto_increment primary key, )" + "nome char(40), " + "id Cidade integer, " + "dataNasc date, " + "renda decimal(10,2), " + "cpf char(14), " + "foto varchar(100), " + "venda boolean)", Conexao);
+
+
 
                 FecharConexao();
             }

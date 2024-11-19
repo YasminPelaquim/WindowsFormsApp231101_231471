@@ -150,6 +150,7 @@
             this.dgvMarca.Size = new System.Drawing.Size(503, 200);
             this.dgvMarca.TabIndex = 2;
             this.dgvMarca.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMarca_CellClick);
+          
             // 
             // btnPesquisa
             // 
