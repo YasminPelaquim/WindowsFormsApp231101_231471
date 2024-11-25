@@ -31,7 +31,7 @@ namespace WindowsFormsApp231101_231471.Views
         {
             cl = new Clientes()
             {
-                clientes = pesquisa
+                nome = pesquisa
             };
             dgvClientes.DataSource = cl.Consultar();
         }
@@ -40,9 +40,9 @@ namespace WindowsFormsApp231101_231471.Views
         {
             if (txtNome.Text == "") return;
 
-            cl = new Cliente()
+            cl = new Clientes()
             {
-                txtNome = txtNome.Text,
+                nome = txtNome.Text,
                 idCidade = (int)cboCidades.SelectedValue,
                 dataNasc = dtpDataNasc.Value,
                 renda = double.Parse(txtRenda.Text),
@@ -60,9 +60,9 @@ namespace WindowsFormsApp231101_231471.Views
         {
             if (txtID.Text == "") return;
 
-            cl = new Cliente()
+            cl = new Clientes()
             {
-                IDataAdapter = int.Parse(txtID.Text),
+                id = int.Parse(txtID.Text),
                 nome = txtNome.Text,
                 idCidade = (int)cboCidades.SelectedValue,
                 renda = double.Parse(txtRenda.Text),
@@ -79,7 +79,7 @@ namespace WindowsFormsApp231101_231471.Views
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpaControles();
-            carregarGid("");
+            carregarGrid("");
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -88,7 +88,7 @@ namespace WindowsFormsApp231101_231471.Views
 
             if (MessageBox.Show("Deseja excluir o cliente?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                cl = new Cliente()
+                cl = new Clientes()
                 {
                     id = int.Parse(txtID.Text),
                 };

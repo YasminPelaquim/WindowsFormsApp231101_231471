@@ -10,12 +10,13 @@ namespace WindowsFormsApp231101_231471.Models
     {
         public int id { get; set; }
         public string nome { get; set; }
-        public string idCidade { get; set; }
+        public int idCidade { get; set; }
         public DateTime dataNasc {  get; set; }
         public double renda { get; set; }
         public string cpf { get; set; }
         public string foto { get; set; }
         public bool venda { get; set; }
+        
 
 
         public void Incluir()
