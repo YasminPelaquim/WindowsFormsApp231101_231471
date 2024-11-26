@@ -19,7 +19,7 @@ namespace WindowsFormsApp231101_231471
         {
             try
             {
-                Conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
+                Conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau;database=vendas");
 
                 Conexao.Open();
             }
@@ -61,10 +61,10 @@ namespace WindowsFormsApp231101_231471
                 Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categorias" + "(id integer auto_increment primary key, " + "categoria char(20))", Conexao);
                 Comando.ExecuteNonQuery();
 
-                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Clientes" + "(id integer auto_increment primary key, )" + "nome char(40), " + "id Cidade integer, " + "dataNasc date, " + "renda decimal(10,2), " + "cpf char(14), " + "foto varchar(100), " + "venda boolean)", Conexao);
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Clientes" + "(id integer auto_increment primary key, " + "nome char(40), " + "idCidade integer, " + "dataNasc date, " + "renda decimal(10,2), " + "cpf char(14), " + "foto varchar(100), " + "venda boolean)", Conexao);
                 Comando.ExecuteNonQuery();
 
-                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Produtos " + "(Id interger auto_increment primary key, " + "descricao char(40), " + "idCategoria integer," + "idMarca integer," + "estoque decimal(10,3), " + "valorVenda decimal(10,2), " + "foto varchar(100))", Conexao);
+                Comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Produtos " + "(Id integer auto_increment primary key, " + "descricao char(40), " + "idCategoria integer," + "idMarca integer," + "estoque decimal(10,3), " + "valorVenda decimal(10,2), " + "foto varchar(100))", Conexao);
                 Comando.ExecuteNonQuery();
 
                 FecharConexao();

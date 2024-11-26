@@ -73,19 +73,17 @@ namespace WindowsFormsApp231101_231471.Models
             }
         }
 
-        public DataTable Consultar()
+        public DataTable Pesquisar()
         {
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("SELECT p.*, m.marca marca, c.categoria categoria " +
-                                                 " FROM produtos p inner join marcas m inner join categorias c on m.id=p.idMarca and c.id=p.idCategoria " +
-                                                 " where p.descricao like ?Descricao order by p.descricao", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("SELECT p.*, m.marca marca, c.categoria FROM " +
+                                                 " Produtos p inner join Marcas m on (m.id = p.idMarca) " + "inner join Categorias c on (c.id = p.idCategoria) " + "where p.descricao like @descricao order by p.descricao", Banco.Conexao);                                               
                 Banco.Comando.Parameters.AddWithValue("@descricao", descricao + "%");
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
                 Banco.datTabela = new DataTable();
                 Banco.Adaptador.Fill(Banco.datTabela);
-                Banco.FecharConexao();
                 return Banco.datTabela;
             }
             catch (Exception e)

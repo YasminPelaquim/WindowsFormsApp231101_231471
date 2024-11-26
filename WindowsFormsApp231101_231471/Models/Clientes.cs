@@ -24,7 +24,7 @@ namespace WindowsFormsApp231101_231471.Models
             try
             {
                 Banco.Conexao.Open();
-                Banco.Comando = new MySqlCommand("INSERT INTO clientes(nome, idCidade, dataNasc, renda, cpf, foto, venda) " + "VALUES (@nome, @idCidade, @dataNasc, @renda, @cpf, @foto, @venda", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("INSERT INTO clientes(nome, idCidade, dataNasc, renda, cpf, foto, venda) " + "VALUES (@nome, @idCidade, @dataNasc, @renda, @cpf, @foto, @venda)", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@nome", nome);
                 Banco.Comando.Parameters.AddWithValue("@idCidade", idCidade);
                 Banco.Comando.Parameters.AddWithValue("@dataNasc", dataNasc);
@@ -54,6 +54,7 @@ namespace WindowsFormsApp231101_231471.Models
                 Banco.Comando.Parameters.AddWithValue("@cpf", cpf);
                 Banco.Comando.Parameters.AddWithValue("@foto", foto);
                 Banco.Comando.Parameters.AddWithValue("@venda", venda);
+                Banco.Comando.Parameters.AddWithValue("@id", id);
                 Banco.Comando.ExecuteNonQuery();
                 Banco.FecharConexao();
             }
@@ -84,7 +85,7 @@ namespace WindowsFormsApp231101_231471.Models
             try
             {
                 Banco.AbrirConexao();
-                Banco.Comando = new MySqlCommand("SELECT cl.*, ci.nome cidade, " + "ci.uf FROM clientes cl inner join Clientes ci on(ci.id = cl.idClientes) " + "WHERE cl.nome like ?Nome order by cl.nome", Banco.Conexao);
+                Banco.Comando = new MySqlCommand("SELECT cl.*, ci.nome cidade, " + "ci.uf FROM clientes cl inner join Cidades ci on(ci.id = cl.idCidade) " + "WHERE cl.nome like ?Nome order by cl.nome", Banco.Conexao);
                 Banco.Comando.Parameters.AddWithValue("@nome", nome + "%");
                 Banco.Adaptador = new MySqlDataAdapter(Banco.Comando);
                 Banco.datTabela = new DataTable();

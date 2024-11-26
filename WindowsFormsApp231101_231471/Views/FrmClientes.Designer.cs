@@ -202,6 +202,7 @@
             this.btnIncluir.TabIndex = 18;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = true;
+            this.btnIncluir.Click += new System.EventHandler(this.btnIncluir_Click_1);
             // 
             // btnAlterar
             // 
@@ -211,6 +212,7 @@
             this.btnAlterar.TabIndex = 19;
             this.btnAlterar.Text = "Alterar";
             this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click_1);
             // 
             // btnCancelar
             // 
@@ -220,6 +222,7 @@
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
             // 
             // btnExcluir
             // 
@@ -229,6 +232,7 @@
             this.btnExcluir.TabIndex = 21;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // btnFechar
             // 
@@ -238,6 +242,7 @@
             this.btnFechar.TabIndex = 22;
             this.btnFechar.Text = "Fechar";
             this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click_1);
             // 
             // groupBox1
             // 
@@ -272,6 +277,7 @@
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Pesquisar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // txtPesquisa
             // 
